@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {View,Text} from "react-native"
 
-export default function HeaderTab() {
+export default function Search() {
 //   render() {
     return (
         <view>
-            <Text>hii</Text>
+            <Text>This is Search page</Text>
         </view>
     );
 //   }

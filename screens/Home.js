@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
-import { Text, SafeAreaView, SafeAreaSafe, SafeAreaViewAreaView } from 'react-native'
-import HeaderTab from '../components/HeaderTab'
+import { SafeAreaView, Text, View } from 'react-native'
+import { Divider } from 'react-native-elements';
+import BottomTabs from '../components/BottomTabs';
+// import SearchBar from '../components/SearchBar'
 
 export default function Home() {
     return (
-      <SafeAreaView>
-        <HeaderTab/>
-      </SafeAreaView>
-    )
+
+      <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+        <Text>Home Page</Text>
+      </View>
+
+      // <SafeAreaView style={{backgroundColor: "#eee"}}>
+      //     <View>
+      //       <BottomTabs/>
+      //     </View>
+      // </SafeAreaView>
+      // <Divider></Divider>
+    );
 }
