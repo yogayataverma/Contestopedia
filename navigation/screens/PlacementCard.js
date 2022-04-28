@@ -2,10 +2,14 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 
-export default function Placement({ navigation }) {
+export default function PlacementCard({ navigation }) {
     return (
         <View style={styles.cardContainer}>
-            <Text>Latest Contests</Text>
+            <Text>Company Name :</Text>
+            <Text>Eligibility :</Text>
+            <Text>Last Date to Apply :</Text>
+            <Text>URL :</Text>
+            <Text>Description :</Text>
         </View>
     );
 }
@@ -13,7 +17,7 @@ export default function Placement({ navigation }) {
 const deviceWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     cardContainer: { width: deviceWidth-25,
-    backgroundColor: '#FFA500',
+    backgroundColor: '#ff714e',
     height:200,
     borderRadius:20,
     // alignItems:'center',
