@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { FlatList } from 'react-native-web';
+
 // import { useEffect } from 'react/cjs/react.production.min';
 
 
@@ -15,7 +16,7 @@ export default function ContestCard({ navigation }) {
     const [myData, setMyData] = useState([]);
     const getUserData= async ()=>{
     try{
-            const response = await fetch("https://kontests.net/api/v1/codeforces");
+            const response = await fetch("https://kontests.net/api/v1/all");
             
             const realData = await response.json();
             setMyData(realData);
@@ -36,12 +37,11 @@ export default function ContestCard({ navigation }) {
         return(
         <View style={styles.card}>
         <View style={styles.cardContainer}>
-             
-            <Text>Contest Name : {item.name}</Text>
-            <Text>Start Time : {item.start_time}</Text>
-            <Text>End Time : {item.end_time}</Text>
-            <Text>Start in 24Hours : </Text>
-            <Text>URL : {item.url}</Text>
+            <h1>          Contest Name : {item.name}</h1>
+            <Text style={{ flex: 1, alignItems: 'center', justifyContent: 'center' , fontFamily: "serif",fontSize:'100'}}>   Start Time : {item.start_time}</Text>
+            <Text  style={{ flex: 1, alignItems: 'center', justifyContent: 'center', fontFamily: "serif" }}>   End Time : {item.end_time}</Text>
+            <Text style={{ flex: 1, alignItems: 'center', justifyContent: 'center', fontFamily: "serif" }}>    Start in 24Hours : </Text>
+            <Text style={{ flex: 1, alignItems: 'center', justifyContent: 'center', fontFamily: "serif" }}>    URL : {item.url}</Text>
 
         </View>
             
@@ -68,7 +68,7 @@ export default function ContestCard({ navigation }) {
 const deviceWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     cardContainer: { width: deviceWidth-25,
-    backgroundColor: '#ff714e',
+    backgroundColor: 'transparent',
     height:200,
     borderRadius:20,
     marginLeft:12,
