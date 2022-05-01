@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { FlatList } from 'react-native-web';
-// import { useEffect } from 'react/cjs/react.production.min';
+import { View, Text, StyleSheet, Dimensions,FlatList } from 'react-native';
+import {db} from './firebase'
 
 
 
@@ -9,14 +8,11 @@ export default function PlacementCard({ navigation }) {
     
     //loading screen
     const[isLoaded, setIsLoaded] = useState(true);
-
-
     //API data fetch
     const [myData, setMyData] = useState([]);
     const getUserData= async ()=>{
     try{
             const response = await fetch("https://kontests.net/api/v1/codeforces");
-            
             const realData = await response.json();
             setMyData(realData);
             setIsLoaded(false);
@@ -28,6 +24,7 @@ export default function PlacementCard({ navigation }) {
     };
     
 
+   
     useEffect(() => getUserData(),[]);
 
     //Show placement data
@@ -56,7 +53,7 @@ export default function PlacementCard({ navigation }) {
 
         // </View>
             <FlatList 
-                data={myData}
+                data={getUserData}
                 renderItem={showUserData}/>
     );
 }

@@ -1,29 +1,25 @@
 import React, {useState,useEffect} from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { FlatList } from 'react-native-web';
-// import { useEffect } from 'react/cjs/react.production.min';
-
+import { View, Text,FlatList, StyleSheet, Dimensions } from 'react-native';
 
 
 export default function ContestCard({ navigation }) {
     
     //loading screen
-    // const[isLoaded, setIsLoaded] = useState(true);
+    const[isLoaded, setIsLoaded] = useState(true);
 
 
     //API data fetch
     const [myData, setMyData] = useState([]);
     const getUserData= async ()=>{
     try{
-            const response = await fetch("https://kontests.net/api/v1/codeforces");
-            
+            const response = await fetch("https://kontests.net/api/v1/all");
             const realData = await response.json();
             setMyData(realData);
-            // setIsLoaded(false);
+            setIsLoaded(false);
             // console.log(realData);
 
         }catch(error){
-            // console.log(error);
+            console.log(error);
         }
     };
     

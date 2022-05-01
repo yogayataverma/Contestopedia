@@ -6,13 +6,13 @@ import { ScrollView,View, Text } from 'react-native';
 export default function Placement({ navigation }) {
     return (
     <>
-        <ScrollView>
-            {/* <PlacementCard/>
-            <PlacementCard/>
-            <PlacementCard/>
-            <PlacementCard/>
-            <PlacementCard/> */}
-        </ScrollView>
+        <View>
+            <Text>placement card</Text>
+        </View>
+        {/* <ScrollView> */}
+            {/* <PlacementCard/> */}
+ 
+        {/* </ScrollView> */}
     </>
     );
 }

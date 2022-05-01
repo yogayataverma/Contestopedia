@@ -6,11 +6,7 @@ import ContestCard from './ContestCard';
 export default function Contests({ navigation }) {
     return (
     <>
-        <ScrollView>
-            <ContestCard/>
-            <ContestCard/>
-            <ContestCard/>
-            <ContestCard/>
+        <ScrollView>            
             <ContestCard/>
         </ScrollView>
     </>
