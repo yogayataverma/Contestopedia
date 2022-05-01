@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { View, Text,FlatList, StyleSheet, Dimensions } from 'react-native';
+import { View, Text,FlatList, StyleSheet, Dimensions,Linking } from 'react-native';
 
 
 export default function ContestCard({ navigation }) {
@@ -33,12 +33,11 @@ export default function ContestCard({ navigation }) {
         <View style={styles.card}>
         <View style={styles.cardContainer}>
              
-            <Text>Contest Name : {item.name}</Text>
-            <Text>Start Time : {item.start_time}</Text>
-            <Text>End Time : {item.end_time}</Text>
-            <Text>Start in 24Hours : </Text>
-            <Text>URL : {item.url}</Text>
-
+            <Text style={styles.itemName} >Contest Name : {item.name}</Text>
+            <Text style={styles.itemStyle}>Start Time : {item.start_time}</Text>
+            <Text style={styles.itemStyle}>End Time : {item.end_time}</Text>
+            <Text style={styles.itemStyle}>Start in 24Hours : </Text>
+            <Text style={styles.itemurl} onPress={() => Linking.openURL(item.url)}>{item.url}</Text>
         </View>
             
         </View>
@@ -64,10 +63,11 @@ export default function ContestCard({ navigation }) {
 const deviceWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     cardContainer: { width: deviceWidth-25,
-    backgroundColor: '#ff714e',
-    height:200,
+    backgroundColor: 'orange',
+    // height:200,
     borderRadius:20,
     marginLeft:12,
+    padding:10,
     marginTop:30,
 
     shadowColor: '#000',
@@ -79,4 +79,48 @@ const styles = StyleSheet.create({
     shadowRadius:5,
     elevation: 9,
 },
+itemStyle: {
+    paddingLeft: 10,
+    paddingBottom:8,
+    color:"#fff",
+    fontSize:18
+  },
+  itemName:{
+    paddingLeft:10,
+    paddingBottom:8,
+    color:"#000",
+    fontSize:25,
+    fontWeight:"bold"
+  },
+  cardStyle:{
+      marginTop:0,
+  },
+  itemurl:{
+    paddingLeft: 10,
+    paddingBottom:8,
+    color:"white",
+    fontWeight:"bold",
+    fontSize:18
+  },
+  textInputStyle: {
+    height: 40,
+    // borderWidth: 1,
+    paddingLeft: 20,
+    margin: 5,
+    borderColor: '#009688',
+    backgroundColor: '#FFFFFF',
+  },
+  searchCard:{
+      padding:5,
+      paddingBottom:15,
+      paddingTop:15,
+      borderWidth:1,
+      borderColor:"#fff",
+      backgroundColor:"orange",
+      borderRadius:20,
+      marginTop:0,
+      marginBottom:0,
+      marginLeft:10,
+      marginRight:10,
+  }
 });

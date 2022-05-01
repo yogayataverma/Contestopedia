@@ -49,7 +49,7 @@ function MainContainer() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
+          activeTintColor: 'orange',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 5, fontSize: 10 },
           style: { padding: 10, height: 70}
