@@ -22,10 +22,10 @@ export default function HomeScreen({ navigation }) {
             <Text>Latest Contest</Text>
             <ScrollView>
                 <HomeCards/>
+                {/* <HomeCards/>
                 <HomeCards/>
                 <HomeCards/>
-                <HomeCards/>
-                <HomeCards/>
+                <HomeCards/> */}
             </ScrollView>
         </>
     );
